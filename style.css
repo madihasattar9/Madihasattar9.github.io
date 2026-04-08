@@ -391,3 +391,30 @@ footer a:hover { color: var(--ink); }
 
   footer { padding: 24px; }
 }
+
+/* ─── HERO NAV (homepage links above name) ───────────── */
+.hero-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  position: static;
+  border: none;
+  background: none;
+  padding: 0;
+  height: auto;
+}
+
+.hero-nav a {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--warm-mid);
+  text-decoration: none;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: color 0.2s;
+}
+
+.hero-nav a:hover { color: var(--ink); }
