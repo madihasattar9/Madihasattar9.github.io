@@ -285,13 +285,13 @@ main { flex: 1; }
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--ink);
+  color: #4a7fa5;
   text-decoration: none;
   transition: color 0.2s;
   line-height: 1.35;
 }
 .work-item .title:hover { color: var(--accent); }
-.work-item .title.no-link { cursor: default; }
+.work-item .title.no-link { cursor: default; color: var(--ink); }
 .work-item .title.no-link:hover { color: var(--ink); }
 
 .work-item .excerpt {
