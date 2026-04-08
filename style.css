@@ -408,13 +408,14 @@ footer a:hover { color: var(--ink); }
 
 .hero-nav a {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 300;
   font-style: italic;
   color: var(--warm-mid);
   text-decoration: none;
   letter-spacing: 0;
   text-transform: none;
+  white-space: nowrap;
   transition: color 0.2s;
 }
 
