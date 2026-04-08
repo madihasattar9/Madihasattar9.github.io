@@ -395,9 +395,10 @@ footer a:hover { color: var(--ink); }
 /* ─── HERO NAV (homepage links above name) ───────────── */
 .hero-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 6px;
+  gap: 8px 28px;
   position: static;
   border: none;
   background: none;

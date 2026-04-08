@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="fiction.html">Fiction</a>
-    <a href="reporting.html" class="sub">— Reporting & Commentary</a>
+    <a href="reporting.html" class="sub">— Reporting, Analysis & Commentary</a>
     <a href="book-reviews.html" class="sub">— Book Reviews</a>
     <a href="interviews.html" class="sub">— Interviews</a>
     <a href="https://twitter.com/MadihaSattar" target="_blank" rel="noopener">Twitter ↗</a>
@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="https://twitter.com/MadihaSattar" target="_blank" rel="noopener">@MadihaSattar</a>
   </footer>`;
 
-  document.body.insertAdjacentHTML('afterbegin', navHTML);
+  // Only inject the top nav on non-home pages
+  if (page !== 'home') {
+    document.body.insertAdjacentHTML('afterbegin', navHTML);
+  }
   document.body.insertAdjacentHTML('beforeend', footerHTML);
 });
