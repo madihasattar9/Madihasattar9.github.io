@@ -1,4 +1,4 @@
-// Shared header and footer injector (every page, including the homepage)
+// Shared header (every page) and footer (every page except the homepage)
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.body.dataset.page || '';
 
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const headerHTML = `
   <header class="site-header">
-    <a href="index.html" class="site-name">Madiha Sattar</a>
     <nav class="site-nav" aria-label="Main">
       ${link('index.html#about', 'About', 'about')}
       ${link('fiction.html', 'Fiction', 'fiction')}
@@ -27,5 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   </footer>`;
 
   document.body.insertAdjacentHTML('afterbegin', headerHTML);
-  document.body.insertAdjacentHTML('beforeend', footerHTML);
+  // the homepage shows these links under the bio instead
+  if (page !== 'home') {
+    document.body.insertAdjacentHTML('beforeend', footerHTML);
+  }
 });

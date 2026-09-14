@@ -48,23 +48,9 @@ img { max-width: 100%; }
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px 32px;
+  justify-content: flex-start;
   padding: 18px var(--gutter);
 }
-
-.site-name {
-  font-family: var(--label);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-  text-decoration: none;
-}
-.site-name:hover { color: var(--ink); }
 
 .site-nav {
   display: flex;
@@ -175,6 +161,28 @@ main {
   text-wrap: pretty;
 }
 .home-about-text p:last-child { margin-bottom: 0; }
+
+/* email, X and LinkedIn under the bio (the homepage has no footer) */
+/* same sizing as the site footer, which keeps all three on one line at 375px */
+.home-contact {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(10px, 2.5vw, 28px);
+  margin-top: clamp(32px, 5vw, 48px);
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+.home-contact a {
+  font-family: var(--label);
+  font-size: clamp(0.56rem, 2.4vw, 0.68rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-contact a:hover { color: var(--ink); }
 
 /* raised initial ties the bio to the display type */
 .home-about-text p:first-child::first-letter {
@@ -299,6 +307,12 @@ a.entry-title:hover { color: var(--ink); }
 }
 .review-text .entry-title { font-size: clamp(1.45rem, 3vw, 1.95rem); max-width: 26em; }
 .review-text .entry-title + .entry-excerpt { margin-top: 4px; }
+/* the publication above each review title, sized to match the Fiction credits */
+.review-text .entry-label {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--body);
+}
 
 /* Interviews */
 [data-page="interviews"] .entry-title {
@@ -317,11 +331,17 @@ a.entry-title:hover { color: var(--ink); }
   border-top: 1px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule);
   padding: 22px 0 24px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
-  gap: 26px 16px;
+  /* logos vary from 42px to 109px wide, so a fixed gap (not equal columns) keeps the spacing even */
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-items: start;
+  gap: 22px clamp(20px, 3vw, 36px);
+}
+.pub-filter { --logo-scale: 1; }
+
+/* tablets: shrink the logos a little so all eight stay on one row instead of leaving one behind */
+@media (min-width: 681px) and (max-width: 899px) {
+  .pub-filter { --logo-scale: 0.76; }
 }
 
 .pub-filter button {
@@ -347,14 +367,14 @@ a.entry-title:hover { color: var(--ink); }
 }
 
 /* wordmarks 40–46px; stacked marks need more height to read at the same optical size */
-.pub-filter [data-pub="economist"] img  { height: 46px; }
-.pub-filter [data-pub="fp"] img         { height: 44px; }
-.pub-filter [data-pub="dawn"] img       { height: 40px; }
-.pub-filter [data-pub="caravan"] img    { height: 46px; }
-.pub-filter [data-pub="herald"] img     { height: 40px; }
-.pub-filter [data-pub="indiatoday"] img { height: 44px; }
-.pub-filter [data-pub="common"] img     { height: 54px; }
-.pub-filter [data-pub="huffpost"] img   { height: 50px; }
+.pub-filter [data-pub="economist"] img  { height: calc(46px * var(--logo-scale)); }
+.pub-filter [data-pub="fp"] img         { height: calc(44px * var(--logo-scale)); }
+.pub-filter [data-pub="dawn"] img       { height: calc(40px * var(--logo-scale)); }
+.pub-filter [data-pub="caravan"] img    { height: calc(46px * var(--logo-scale)); }
+.pub-filter [data-pub="herald"] img     { height: calc(40px * var(--logo-scale)); }
+.pub-filter [data-pub="indiatoday"] img { height: calc(44px * var(--logo-scale)); }
+.pub-filter [data-pub="common"] img     { height: calc(54px * var(--logo-scale)); }
+.pub-filter [data-pub="huffpost"] img   { height: calc(50px * var(--logo-scale)); }
 
 .pub-section { margin-top: clamp(40px, 6vw, 68px); }
 .pub-section.is-hidden { display: none; }
@@ -488,6 +508,6 @@ a.entry-title:hover { color: var(--ink); }
 
 /* ─── PHONES ─────────────────────────────────────────── */
 @media (max-width: 680px) {
-  /* the header wraps to two lines here, so land the About anchor below it */
-  .home-about { scroll-margin-top: 110px; }
+  /* the header wraps to two rows of links here, so land the About anchor below it */
+  .home-about { scroll-margin-top: 96px; }
 }
