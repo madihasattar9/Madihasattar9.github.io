@@ -137,6 +137,7 @@ main {
 }
 
 .home-about {
+  max-width: 46rem;
   margin-top: clamp(64px, 10vw, 128px);
   border-top: 1px solid var(--rule-strong);
   padding-top: 22px;
@@ -145,9 +146,9 @@ main {
 
 .section-label {
   font-family: var(--label);
-  font-size: 0.66rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--quiet);
   margin-bottom: 26px;
@@ -156,7 +157,6 @@ main {
 /* photo floats left; the bio must stay normal block flow so it wraps around and under it */
 .home-about-body {
   display: flow-root;
-  max-width: 46em;
 }
 
 .home-about-body img {
