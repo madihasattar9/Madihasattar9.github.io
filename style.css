@@ -122,23 +122,6 @@ main { flex: 1; }
   text-wrap: balance;
 }
 
-.home-contact {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.home-contact a {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--warm-mid);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.home-contact a:hover { color: var(--ink); }
-
 /* about, merged into the homepage below the tagline */
 /* bio text wraps around the photo on every screen size */
 .home-about {
