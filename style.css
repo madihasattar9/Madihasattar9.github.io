@@ -70,91 +70,6 @@ nav {
 .nav-links a:hover,
 .nav-links a.active { color: var(--ink); }
 
-/* dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > span {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--warm-mid);
-  cursor: pointer;
-  transition: color 0.2s;
-  user-select: none;
-}
-.nav-dropdown:hover > span { color: var(--ink); }
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  padding: 12px 0;
-  min-width: 220px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-}
-.nav-dropdown:hover .dropdown-menu { display: block; }
-
-.dropdown-menu a {
-  display: block;
-  padding: 8px 20px;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--warm-mid);
-  text-decoration: none;
-  transition: color 0.2s, background 0.2s;
-}
-.dropdown-menu a:hover { color: var(--ink); background: #f2ede6; }
-
-/* twitter icon */
-.nav-twitter { display: flex; align-items: center; }
-.nav-twitter svg { width: 18px; height: 18px; fill: var(--warm-mid); transition: fill 0.2s; }
-.nav-twitter:hover svg { fill: var(--ink); }
-
-/* hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-  margin-left: auto;
-}
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--ink);
-  transition: all 0.3s;
-}
-
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: var(--paper);
-  border-top: 1px solid var(--rule);
-  padding: 24px 40px 32px;
-  gap: 20px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--warm-mid);
-  text-decoration: none;
-}
-.mobile-menu a.sub { padding-left: 16px; font-size: 0.7rem; }
-.mobile-menu a:hover { color: var(--ink); }
-
 /* ─── MAIN ───────────────────────────────────────────── */
 main { flex: 1; }
 
@@ -184,7 +99,7 @@ main { flex: 1; }
 /* ─── HOME ───────────────────────────────────────────── */
 .home-hero {
   padding: 96px 40px 80px;
-  max-width: 720px;
+  max-width: 880px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -217,8 +132,8 @@ main { flex: 1; }
   font-weight: 300;
   font-style: italic;
   color: var(--warm-mid);
-  max-width: 480px;
   line-height: 1.6;
+  text-wrap: balance;
 }
 
 .home-contact {
@@ -238,6 +153,34 @@ main { flex: 1; }
 }
 .home-contact a:hover { color: var(--ink); }
 
+/* about, merged into the homepage below the tagline */
+/* bio text wraps around the photo on every screen size */
+.home-about {
+  display: flow-root;
+  margin-top: 16px;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 24px;
+}
+
+.home-about img {
+  float: left;
+  width: 220px;
+  height: auto;
+  margin: 6px 36px 12px 0;
+  border-radius: 10px;
+}
+
+.home-about-text p {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 1.1em;
+  text-wrap: pretty;
+}
+.home-about-text p:last-child { margin-bottom: 0; }
+
 /* ─── ABOUT ──────────────────────────────────────────── */
 .about-section {
   padding: 0 40px 80px;
@@ -253,6 +196,30 @@ main { flex: 1; }
   font-weight: 300;
   line-height: 1.9;
   color: var(--ink);
+  text-wrap: pretty;
+}
+
+/* small label above a full piece (e.g. "Book Review · Herald") */
+.about-section .piece-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm-mid);
+}
+
+/* one-line summary under a piece's title */
+.about-section .piece-standfirst {
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--warm-mid);
+}
+
+/* publication note at the end of a full piece */
+.about-section .piece-note {
+  font-style: italic;
+  color: var(--warm-mid);
 }
 
 /* ─── WORK LISTS ─────────────────────────────────────── */
@@ -281,6 +248,23 @@ main { flex: 1; }
   color: var(--accent);
 }
 
+.work-item .pub { text-wrap: balance; }
+/* several credit lines under one entry, each its own link */
+.work-item .pub-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.work-item .pub a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.work-item .pub a:hover { color: var(--ink); }
+
 .work-item .title {
   font-size: 1.2rem;
   font-weight: 400;
@@ -299,6 +283,7 @@ main { flex: 1; }
   font-weight: 300;
   color: #6b5d50;
   line-height: 1.7;
+  text-wrap: pretty;
 }
 
 .work-item .date {
@@ -379,10 +364,17 @@ footer a:hover { color: var(--ink); }
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 680px) {
-  nav { padding: 0 24px; }
-  .nav-links, .nav-twitter { display: none; }
-  .hamburger { display: flex; }
-  .mobile-menu { padding: 24px 24px 32px; }
+  /* name on its own line, links wrap in a row beneath it */
+  nav {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 14px 24px;
+    gap: 6px 0;
+  }
+  .nav-name { width: 100%; margin-right: 0; }
+  .nav-links { flex-wrap: wrap; gap: 4px 18px; }
+
+  .home-about img { width: 118px; margin: 5px 18px 8px 0; border-radius: 8px; }
 
   .home-hero, .page-header, .about-section, .work-section, .pub-logos {
     padding-left: 24px;

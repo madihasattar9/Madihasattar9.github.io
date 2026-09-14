@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <nav>
     <a href="index.html" class="nav-name">Madiha Sattar</a>
     <ul class="nav-links">
-      <li><a href="about.html" ${page==='about'?'class="active"':''}>About</a></li>
+      <li><a href="index.html#about">About</a></li>
       <li><a href="fiction.html" ${page==='fiction'?'class="active"':''}>Fiction</a></li>
       <li><a href="reporting.html" ${page==='reporting'?'class="active"':''}>Reporting &amp; Analysis</a></li>
       <li><a href="interviews.html" ${page==='interviews'?'class="active"':''}>Interviews</a></li>
