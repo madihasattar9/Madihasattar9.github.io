@@ -1,27 +1,31 @@
-// Shared nav and footer injector
+// Shared header and footer injector (every page, including the homepage)
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.body.dataset.page || '';
 
-  const navHTML = `
-  <nav>
-    <a href="index.html" class="nav-name">Madiha Sattar</a>
-    <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="fiction.html" ${page==='fiction'?'class="active"':''}>Fiction</a></li>
-      <li><a href="reporting.html" ${page==='reporting'?'class="active"':''}>Reporting &amp; Analysis</a></li>
-      <li><a href="interviews.html" ${page==='interviews'?'class="active"':''}>Interviews</a></li>
-      <li><a href="book-reviews.html" ${page==='reviews'?'class="active"':''}>Book Reviews</a></li>
-    </ul>
-  </nav>`;
+  const link = (href, label, key) =>
+    `<a href="${href}"${page === key ? ' class="active" aria-current="page"' : ''}>${label}</a>`;
+
+  const headerHTML = `
+  <header class="site-header">
+    <a href="index.html" class="site-name">Madiha Sattar</a>
+    <nav class="site-nav" aria-label="Main">
+      ${link('index.html#about', 'About', 'about')}
+      ${link('fiction.html', 'Fiction', 'fiction')}
+      ${link('reporting.html', 'Reporting &amp; Analysis', 'reporting')}
+      ${link('interviews.html', 'Interviews', 'interviews')}
+      ${link('book-reviews.html', 'Book Reviews', 'reviews')}
+    </nav>
+  </header>`;
 
   const footerHTML = `
-  <footer>
+  <footer class="site-footer">
     <a href="mailto:madiha.s@gmail.com">madiha.s@gmail.com</a>
-    <a href="https://twitter.com/MadihaSattar" target="_blank" rel="noopener">@MadihaSattar</a>
+    <div class="site-footer-social">
+      <a href="https://twitter.com/MadihaSattar" target="_blank" rel="noopener">@MadihaSattar</a>
+      <a href="https://www.linkedin.com/in/madiha-sattar/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </footer>`;
 
-  if (page !== 'home') {
-    document.body.insertAdjacentHTML('afterbegin', navHTML);
-  }
+  document.body.insertAdjacentHTML('afterbegin', headerHTML);
   document.body.insertAdjacentHTML('beforeend', footerHTML);
 });

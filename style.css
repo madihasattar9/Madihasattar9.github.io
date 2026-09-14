@@ -1,382 +1,493 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500&family=Spectral:ital,wght@0,400;1,400&display=swap');
 
 :root {
-  --ink: #1a1410;
-  --paper: #faf8f4;
-  --warm-mid: #6b5a4c;
-  --accent: #7a4f3a;
-  --rule: #d8cfc5;
-  --nav-h: 68px;
+  --paper: #ffffff;
+  --ink: #0a0a0a;        /* headings, active nav, non-linked titles */
+  --body: #3a3632;       /* excerpts, running text */
+  --mid: #4a4642;        /* tagline, standfirsts */
+  --quiet: #6f6b66;      /* nav links, footer, credits */
+  --faint: #8c8882;      /* dates, small labels */
+  --rule: #e7e5e1;       /* hairlines between entries */
+  --rule-strong: #0a0a0a;/* rule that opens a list or the About block */
+  --link: #2970b8;       /* article titles that link out */
+
+  --display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --text: 'Spectral', Georgia, 'Times New Roman', serif;
+  --label: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: clamp(20px, 4vw, 52px);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--text);
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ─── NAV ─────────────────────────────────────────────── */
-nav {
+a { color: var(--link); }
+a:hover { color: var(--ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+img { max-width: 100%; }
+
+/* ─── HEADER (injected by site.js) ───────────────────── */
+.site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 50;
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
-  height: var(--nav-h);
   display: flex;
-  align-items: center;
-  padding: 0 40px;
-  gap: 40px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 32px;
+  padding: 18px var(--gutter);
 }
 
-.nav-name {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-  text-decoration: none;
-  white-space: nowrap;
-  margin-right: auto;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--warm-mid);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active { color: var(--ink); }
-
-/* ─── MAIN ───────────────────────────────────────────── */
-main { flex: 1; }
-
-/* ─── PAGE HEADER ───────────────────────────────────── */
-.page-header {
-  padding: 72px 40px 48px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.page-header h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  color: var(--ink);
-}
-
-/* ─── HOME ───────────────────────────────────────────── */
-.home-hero {
-  padding: 96px 40px 80px;
-  max-width: 880px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.home-hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--ink);
-}
-
-.home-hero .subtitle {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
+.site-name {
+  font-family: var(--label);
+  font-size: 0.68rem;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--warm-mid);
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-name:hover { color: var(--ink); }
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
 }
 
-.home-hero .tagline {
-  font-size: 1.25rem;
+.site-nav a {
+  font-family: var(--label);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--ink); }
+.site-nav a.active {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+/* ─── PAGE FRAMES ────────────────────────────────────── */
+main {
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(52px, 8vw, 96px) var(--gutter) clamp(64px, 9vw, 112px);
+}
+.page-list  { max-width: 1000px; }
+.page-piece { max-width: 760px; }
+.page-home  {
+  max-width: 1140px;
+  padding-top: clamp(64px, 11vw, 132px);
+  padding-bottom: clamp(72px, 10vw, 120px);
+}
+
+.page-title {
+  font-family: var(--display);
   font-weight: 400;
-  font-style: italic;
-  color: var(--warm-mid);
-  line-height: 1.6;
+  font-size: clamp(2.4rem, 6.5vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
   text-wrap: balance;
 }
-
-/* about, merged into the homepage below the tagline */
-/* bio text wraps around the photo on every screen size */
-.home-about {
-  display: flow-root;
-  margin-top: 16px;
-  padding-top: 40px;
-  border-top: 1px solid var(--rule);
-  scroll-margin-top: 24px;
+.page-title--long {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  max-width: 18em;
 }
 
-.home-about img {
+/* ─── HOMEPAGE ───────────────────────────────────────── */
+.home-name {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 9.2vw, 6.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+}
+
+.home-tagline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.85rem);
+  line-height: 1.4;
+  color: var(--mid);
+  max-width: 27em;
+  text-wrap: balance;
+  margin-top: clamp(22px, 3.5vw, 36px);
+}
+
+.home-about {
+  margin-top: clamp(64px, 10vw, 128px);
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 22px;
+  scroll-margin-top: 76px;
+}
+
+.section-label {
+  font-family: var(--label);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  margin-bottom: 26px;
+}
+
+/* photo floats left; the bio must stay normal block flow so it wraps around and under it */
+.home-about-body {
+  display: flow-root;
+  max-width: 46em;
+}
+
+.home-about-body img {
   float: left;
-  width: 220px;
+  display: block;
+  width: clamp(128px, 22vw, 220px);
   height: auto;
-  margin: 6px 36px 12px 0;
-  border-radius: 10px;
+  margin: 4px clamp(22px, 3.5vw, 40px) 14px 0;
+  border-radius: clamp(8px, 1.4vw, 10px);
 }
 
 .home-about-text p {
-  font-size: 1.15rem;
-  font-weight: 400;
-  line-height: 1.9;
-  color: var(--ink);
-  margin-bottom: 1.1em;
+  font-size: 1.12rem;
+  line-height: 1.82;
+  margin: 0 0 1.15em;
   text-wrap: pretty;
 }
 .home-about-text p:last-child { margin-bottom: 0; }
 
-/* ─── ABOUT ──────────────────────────────────────────── */
-.about-section {
-  padding: 0 40px 80px;
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+/* raised initial ties the bio to the display type */
+.home-about-text p:first-child::first-letter {
+  font-family: var(--display);
+  font-size: 1.5em;
+  line-height: 1;
 }
 
-.about-section p {
-  font-size: 1.15rem;
+/* ─── LIST PAGES ─────────────────────────────────────── */
+.work-list {
+  list-style: none;
+  margin-top: clamp(32px, 5vw, 52px);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.work-list > .entry {
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(26px, 4vw, 40px) 0;
+}
+
+.entry-date,
+.entry-label {
+  font-family: var(--label);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.entry-label {
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
+.entry-title {
+  font-family: var(--display);
   font-weight: 400;
-  line-height: 1.9;
-  color: var(--ink);
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  line-height: 1.2;
+  color: var(--link);
+  text-decoration: none;
+  max-width: 30em;
+  text-wrap: pretty;
+}
+a.entry-title:hover { color: var(--ink); }
+.entry-title.no-link { color: var(--ink); }
+
+.entry-standfirst {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--mid);
+  max-width: 34em;
   text-wrap: pretty;
 }
 
-/* small label above a full piece (e.g. "Book Review · Herald") */
-.about-section .piece-label {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+.entry-excerpt {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--body);
+  max-width: 36em;
+  text-wrap: pretty;
+}
+
+/* Fiction: the publication credit sits above the title and reads as its pair */
+[data-page="fiction"] .entry-title {
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+}
+
+.entry-credit,
+.entry-credits a {
+  font-family: var(--label);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--warm-mid);
+  color: var(--body);
+  text-wrap: balance;
 }
 
-/* one-line summary under a piece's title */
-.about-section .piece-standfirst {
-  font-style: italic;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: var(--warm-mid);
-}
-
-/* publication note at the end of a full piece */
-.about-section .piece-note {
-  font-style: italic;
-  color: var(--warm-mid);
-}
-
-/* ─── WORK LISTS ─────────────────────────────────────── */
-.work-section {
-  padding: 0 40px 80px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.work-list { list-style: none; }
-
-.work-item {
-  padding: 28px 0;
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.work-item:first-child { border-top: 1px solid var(--rule); }
-
-.work-item .pub {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.work-item .pub { text-wrap: balance; }
-/* several credit lines under one entry, each its own link */
-.work-item .pub-credits {
+.entry-credits {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
-.work-item .pub a {
-  color: inherit;
+.entry-credits a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: color 0.2s;
 }
-.work-item .pub a:hover { color: var(--ink); }
+.entry-credits a:hover { color: var(--ink); }
 
-.work-item .title {
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #2970b8;
-  text-decoration: none;
-  transition: color 0.2s;
-  line-height: 1.35;
+/* Book Reviews: fixed cover box, centred against its blurb */
+.work-list > .review-item {
+  display: grid;
+  grid-template-columns: clamp(88px, 12vw, 116px) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 44px);
+  align-items: center;
 }
-.work-item .title:hover { color: var(--accent); }
-.work-item .title.no-link { cursor: default; color: var(--ink); }
-.work-item .title.no-link:hover { color: var(--ink); }
 
-.work-item .excerpt {
+.review-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.14);
+}
+
+.review-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.review-text .entry-title { font-size: clamp(1.45rem, 3vw, 1.95rem); max-width: 26em; }
+.review-text .entry-title + .entry-excerpt { margin-top: 4px; }
+
+/* Interviews */
+[data-page="interviews"] .entry-title {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.15;
+}
+[data-page="interviews"] .entry-excerpt {
   font-size: 1.05rem;
+  max-width: 38em;
+}
+[data-page="interviews"] .entry-title + .entry-excerpt { margin-top: 4px; }
+
+/* ─── REPORTING & ANALYSIS ───────────────────────────── */
+.pub-filter {
+  margin-top: clamp(32px, 5vw, 52px);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
+  padding: 22px 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: 26px 16px;
+  align-items: center;
+  justify-items: start;
+}
+
+.pub-filter button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  transition: opacity 0.2s;
+}
+.pub-filter button.dimmed { opacity: 0.3; }
+.pub-filter button:hover { opacity: 1; }
+
+.pub-filter img,
+.pub-head img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* wordmarks 40–46px; stacked marks need more height to read at the same optical size */
+.pub-filter [data-pub="economist"] img  { height: 46px; }
+.pub-filter [data-pub="fp"] img         { height: 44px; }
+.pub-filter [data-pub="dawn"] img       { height: 40px; }
+.pub-filter [data-pub="caravan"] img    { height: 46px; }
+.pub-filter [data-pub="herald"] img     { height: 40px; }
+.pub-filter [data-pub="indiatoday"] img { height: 44px; }
+.pub-filter [data-pub="common"] img     { height: 54px; }
+.pub-filter [data-pub="huffpost"] img   { height: 50px; }
+
+.pub-section { margin-top: clamp(40px, 6vw, 68px); }
+.pub-section.is-hidden { display: none; }
+
+.pub-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+#economist  .pub-head img { height: 52px; }
+#fp         .pub-head img { height: 46px; }
+#dawn       .pub-head img { height: 42px; }
+#caravan    .pub-head img { height: 50px; }
+#herald     .pub-head img { height: 42px; }
+#indiatoday .pub-head img { height: 46px; }
+#common     .pub-head img { height: 68px; }
+#huffpost   .pub-head img { height: 64px; }
+
+.pub-list { list-style: none; }
+.pub-list > .entry {
+  border-top: 1px solid var(--rule);
+  padding: 26px 0;
+  gap: 10px;
+}
+
+/* ─── FULL-TEXT PIECES ───────────────────────────────── */
+.piece-label {
+  font-family: var(--label);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 18px;
+}
+
+.piece-title {
+  font-family: var(--display);
   font-weight: 400;
-  color: #4d4137;
-  line-height: 1.7;
+  font-size: clamp(2.4rem, 6.5vw, 3.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.piece-title--long {
+  font-size: clamp(2.1rem, 5.6vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.piece-standfirst {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+  line-height: 1.45;
+  color: var(--mid);
+  margin-top: clamp(18px, 3vw, 26px);
   text-wrap: pretty;
 }
 
-.work-item .date {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  color: var(--warm-mid);
+.piece-body {
+  margin-top: clamp(32px, 5vw, 48px);
+  border-top: 1px solid var(--rule-strong);
+  padding-top: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
 }
 
-/* ─── PUBLICATION LOGOS ──────────────────────────────── */
-.pub-logos {
-  padding: 0 40px 80px;
-  max-width: 720px;
-  margin: 0 auto;
+.piece-body p {
+  font-size: 1.14rem;
+  line-height: 1.88;
+  text-wrap: pretty;
 }
 
-.pub-logos p.intro {
-  font-size: 1.05rem;
-  font-weight: 300;
-  color: var(--warm-mid);
-  margin-bottom: 40px;
+.piece-body .piece-epigraph {
+  font-family: var(--display);
   font-style: italic;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  line-height: 1.5;
+  color: var(--mid);
 }
 
-.pub-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
+.piece-body .piece-note {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--quiet);
+  margin-top: 0.6em;
 }
 
-.pub-badge {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
+.back-link { margin-top: clamp(44px, 6vw, 64px); }
+.back-link a {
+  font-family: var(--label);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--warm-mid);
-  border: 1px solid var(--rule);
-  padding: 10px 18px;
+  color: var(--quiet);
   text-decoration: none;
-  transition: all 0.2s;
 }
-.pub-badge:hover {
-  color: var(--ink);
-  border-color: var(--accent);
-  background: #f5efe8;
-}
+.back-link a:hover { color: var(--ink); }
 
-/* ─── FOOTER ─────────────────────────────────────────── */
-footer {
+/* ─── FOOTER (injected by site.js) ───────────────────── */
+/* one line at every width: the clamped size keeps three links off a second row at 375px */
+.site-footer {
   border-top: 1px solid var(--rule);
-  padding: 32px 40px;
+  padding: 26px var(--gutter) 34px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: clamp(10px, 2.5vw, 28px);
 }
 
-footer a {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
+.site-footer-social {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2.5vw, 26px);
+}
+
+.site-footer a {
+  font-family: var(--label);
+  font-size: clamp(0.56rem, 2.4vw, 0.68rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--warm-mid);
+  color: var(--quiet);
   text-decoration: none;
-  transition: color 0.2s;
-}
-footer a:hover { color: var(--ink); }
-
-/* ─── RESPONSIVE ─────────────────────────────────────── */
-@media (max-width: 680px) {
-  /* Cormorant runs small on phones; scale every rem size up a step */
-  html { font-size: 17px; }
-
-  /* name on its own line, links wrap in a row beneath it */
-  nav {
-    height: auto;
-    flex-wrap: wrap;
-    padding: 14px 24px;
-    gap: 6px 0;
-  }
-  .nav-name { width: 100%; margin-right: 0; }
-  .nav-links { flex-wrap: wrap; gap: 4px 18px; }
-
-  .home-about img { width: 118px; margin: 5px 18px 8px 0; border-radius: 8px; }
-
-  .home-hero, .page-header, .about-section, .work-section, .pub-logos {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  footer { padding: 24px; }
-}
-
-/* ─── HERO NAV (homepage links above name) ───────────── */
-.hero-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 8px 28px;
-  /* pinned while scrolling, like the inner-page menu */
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border: none;
-  background: var(--paper);
-  padding: 12px 0;
-  margin-top: -12px;
-  height: auto;
-}
-
-.hero-nav a {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--warm-mid);
-  text-decoration: none;
-  letter-spacing: 0;
-  text-transform: none;
   white-space: nowrap;
-  transition: color 0.2s;
 }
+.site-footer a:hover { color: var(--ink); }
 
-.hero-nav a:hover { color: var(--ink); }
+/* ─── PHONES ─────────────────────────────────────────── */
+@media (max-width: 680px) {
+  /* the header wraps to two lines here, so land the About anchor below it */
+  .home-about { scroll-margin-top: 110px; }
+}

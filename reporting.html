@@ -5,258 +5,211 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Madiha Sattar | Reporting, Analysis & Commentary</title>
 <meta name="description" content="Reporting, analysis and commentary by Madiha Sattar." />
-<link rel="stylesheet" href="style.css?v=20260914b" />
-<style>
-  .pub-grid { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 2.5rem; align-items: center; }
-  .pub-logo-btn {
-    background: none;
-    border: 1px solid #d8cfc5;
-    padding: 16px 24px;
-    cursor: pointer;
-    opacity: 0.65;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .pub-logo-btn img { height: 52px; width: auto; display: block; }
-  .pub-logo-btn:hover { opacity: 1; border-color: #7a4f3a; }
-  .pub-logo-btn.active { opacity: 1; border-color: #7a4f3a; background: #f5efe8; }
-  .pub-section { display: none; }
-  .pub-section.active { display: block; }
-  .pub-section-label {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #6b5a4c;
-    margin-bottom: 1rem;
-  }
-</style>
+<link rel="stylesheet" href="style.css?v=20260914c" />
 </head>
 <body data-page="reporting">
-<main>
-  <div class="page-header">
-    <h1>Reporting, Analysis & Commentary</h1>
+<main class="page-list">
+  <h1 class="page-title page-title--long">Reporting, Analysis &amp; Commentary</h1>
+  <div class="pub-filter" role="group" aria-label="Filter by publication">
+    <button type="button" data-pub="economist" aria-pressed="false"><img src="logo-economist.png" alt="The Economist" /></button>
+    <button type="button" data-pub="fp" aria-pressed="false"><img src="logo-fp.png" alt="Foreign Policy" /></button>
+    <button type="button" data-pub="dawn" aria-pressed="false"><img src="logo-dawn.png" alt="Dawn" /></button>
+    <button type="button" data-pub="caravan" aria-pressed="false"><img src="logo-caravan.png" alt="The Caravan" /></button>
+    <button type="button" data-pub="herald" aria-pressed="false"><img src="logo-herald.png" alt="Herald" /></button>
+    <button type="button" data-pub="indiatoday" aria-pressed="false"><img src="logo-indiatoday.png" alt="India Today" /></button>
+    <button type="button" data-pub="common" aria-pressed="false"><img src="logo-common.png" alt="The Common" /></button>
+    <button type="button" data-pub="huffpost" aria-pressed="false"><img src="logo-huffpost.png" alt="HuffPost" /></button>
   </div>
-  <section class="work-section">
-    <div class="pub-grid">
-      <button class="pub-logo-btn active" data-pub="economist">
-        <img src="logo-economist.png" alt="The Economist" />
-      </button>
-      <button class="pub-logo-btn" data-pub="fp">
-        <img src="logo-fp.png" alt="Foreign Policy" />
-      </button>
-      <button class="pub-logo-btn" data-pub="dawn">
-        <img src="logo-dawn.png" alt="Dawn" />
-      </button>
-      <button class="pub-logo-btn" data-pub="caravan">
-        <img src="logo-caravan.png" alt="The Caravan" />
-      </button>
-      <button class="pub-logo-btn" data-pub="herald">
-        <img src="logo-herald.png" alt="Herald" />
-      </button>
-      <button class="pub-logo-btn" data-pub="indiatoday">
-        <img src="logo-indiatoday.png" alt="India Today" />
-      </button>
-      <button class="pub-logo-btn" data-pub="common">
-        <img src="logo-common.png" alt="The Common" />
-      </button>
-      <button class="pub-logo-btn" data-pub="huffpost">
-        <img src="logo-huffpost.png" alt="HuffPost" />
-      </button>
-    </div>
-
-    <div id="economist" class="pub-section active">
-      <p class="pub-section-label">The Economist</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">May 25, 2012</span>
-          <a href="http://www.economist.com/node/21555930" class="title" target="_blank" rel="noopener">"City at War"</a>
-          <p class="excerpt"><em>In the commercial capital, politicians and gangsters are bound together</em></p>
-          <p class="excerpt">Civilians armed with rocket-propelled grenades and AK-47s firing at police in armoured personnel carriers are not images associated with the urban hearts of commercial capitals. But Karachi is no ordinary city. Earlier this month its crime-infested quarter of Lyari, a sprawling network of alleyways housing 1m people, saw battles that pitted police against a powerful local gang. In one scene locals flattened a carrier's tyres with gunfire. Then they kept firing at the stationary vehicle, killing an officer inside.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">May 20, 2012</span>
-          <a href="http://www.economist.com/node/21555740" class="title" target="_blank" rel="noopener">"Power Politics"</a>
-          <p class="excerpt"><em>Pakistan's energy crisis</em></p>
-          <p class="excerpt">Summer in the plains of Pakistan is excruciating enough without the added joy of 20 hours of power cuts a day. Earlier this month protesters in several towns in Punjab, Pakistan's wealthiest province, smashed windscreens, blocked motorways, shut down markets and set fire to the offices of parliamentarians and an electric utility. They clashed with police who brought out handcuffs and tear gas and fired live rounds in the air.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="fp" class="pub-section">
-      <p class="pub-section-label">Foreign Policy</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">May 1, 2011</span>
-          <a href="http://foreignpolicy.com/2011/05/02/the-bin-laden-aftermath-osama-was-the-least-of-pakistans-problems/" class="title" target="_blank" rel="noopener">"The bin Laden Aftermath: Osama Was the Least of Pakistan's Problems"</a>
-          <p class="excerpt">The streets of Karachi are deserted tonight. Earlier today, five people were killed and over 20 vehicles and a bank were torched. Businesses were shut down and the city's streets were choked with panicked traffic as residents rushed home from work.</p>
-          <br>
-          <p class="excerpt">This chaos had nothing to do with Osama bin Laden. It had to do with Karachi's on-going ethnic and political violence, which flares up repeatedly and claimed hundreds of lives last year. It is a reminder that, despite the symbolic victory of bin Laden's defeat, Pakistan faces severe problems beyond militancy that will not go away with his death.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">March 1, 2011</span>
-          <a href="http://foreignpolicy.com/2011/03/02/pakistans-blasphemy-laws-a-history-of-violence/" class="title" target="_blank" rel="noopener">"Pakistan's Blasphemy Laws: A History of Violence"</a>
-          <p class="excerpt">In 1995, Justice Arif Iqbal Bhatti, along with other judges of a Lahore High Court bench, struck down allegations of blasphemy against two Christians. In 1997 the judge was shot dead in his office. The next year a man owned up to the crime, but has apparently disappeared from custody since then.</p>
-          <br>
-          <p class="excerpt">Since the creation of Pakistan's blasphemy laws, at least 38 cases of extrajudicial killings (some of which involved the active involvement or wilful neglect of the police) of people alleged to have directly committed blasphemy have been documented. Arif Bhatti's was a relatively unusual case at the time. More recently, though, two uniquely courageous Pakistanis lost their lives for defending victims of Pakistan's blasphemy laws.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">February 15, 2011</span>
-          <a href="https://foreignpolicy.com/2011/02/15/baluchistan-pakistans-other-war/" class="title" target="_blank" rel="noopener">"Baluchistan: Pakistan's Other War"</a>
-          <p class="excerpt">In a gas-rich province crisscrossed by pipelines, explosive attacks on infrastructure, a means of weakening the Pakistani state, have been a part of the Baluch separatist toolkit for many years. They are one of the standard modes of attack in a conflict that has its roots in a desire to separate that is as old as Pakistan itself.</p>
-          <br>
-          <p class="excerpt">The legacy of the resisted annexation of Baluchistan and continued unfair treatment of the province is something that has come back to haunt the Pakistani state. Unfortunately, it is the people of the province who are bearing the brunt of the fallout.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">August 8, 2010</span>
-          <a href="http://foreignpolicy.com/2010/08/09/karachis-complex-culture-of-violence/" class="title" target="_blank" rel="noopener">"Karachi's Complex Culture of Violence"</a>
-          <p class="excerpt">At any given point, Karachi's violence can be attributed to Islamist militants, criminals peddling various contraband goods or people fighting land grabbers. Everyone but the political parties who could stop the fighting if they wanted to.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">July 27, 2010</span>
-          <a href="http://foreignpolicy.com/2010/07/28/pakistans-non-reaction-to-wikileaks/" class="title" target="_blank" rel="noopener">"Pakistan's Non-Reaction to Wikileaks"</a>
-          <p class="excerpt">Amidst the Western media's focus on Afghanistan-Pakistan strategy, the war's political implications for Barack Obama and how Afghanistan is carpeted with Taliban IEDs, Pakistan simply has too much at home to worry about. Perceptions of the country in the West take a back seat when severe electricity shortages, spiraling food prices and devastating terrorist attacks confront us every day.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="dawn" class="pub-section">
-      <p class="pub-section-label">Dawn</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">February 17, 2013</span>
-          <a href="https://www.dawn.com/news/786837" class="title" target="_blank" rel="noopener">"Post-2014 Afghanistan: Pakistan's Nightmare?"</a>
-          <p class="excerpt">Through the first week of January, according to military estimates, over 49,200 Pakistanis have been killed or injured by militant violence. Of those, about 3,600 army and Frontier Corps personnel have lost their lives. How high could this death toll go if militant groups aren't reconciled or defeated before Western troops leave Afghanistan?</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">February 14, 2013</span>
-          <a href="https://www.dawn.com/news/786375/end-of-the-afghan-war-possibilities-and-pitfalls-i-pakistan-in-contact-with-afghan-taliban-former-northern-alliance" class="title" target="_blank" rel="noopener">"Pakistan in Contact with Afghan Taliban, Former Northern Alliance"</a>
-          <p class="excerpt">As the United States withdraws from Afghanistan for the second time, Pakistan is looking for a role in Afghan politics once again. This time, though, it's putting its eggs in more than one basket.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">February 26, 2012</span>
-          <a href="https://www.dawn.com/news/698752/the-women-behind-the-oscar" class="title" target="_blank" rel="noopener">"The Women Behind the Oscar"</a>
-          <p class="excerpt">Behind the glamour of Pakistan on the Academy Awards red carpet and the outpouring of excitement on television, Twitter and Facebook lies the bravery of the female subjects of Saving Face, who have to keep a low profile for their own security.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">July 21, 2011</span>
-          <a href="https://www.dawn.com/news/641049/flashback-to-96" class="title" target="_blank" rel="noopener">"Flashback to '96"</a>
-          <p class="excerpt">As America tries to reconnect with the Taliban once again, reading historical diplomatic cables invokes a distinct sense of déjà vu, a feeling that nothing has changed after a decade of war.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">May 21, 2011</span>
-          <a href="https://www.dawn.com/news/630875/anp-leaders-said-military-protected-haqqanis-other-militants" class="title" target="_blank" rel="noopener">"ANP Leaders Said Military Protected Haqqanis, Other Militants"</a>
-          <p class="excerpt">In a meeting with an American diplomat in July 2009, ANP leader Senator Afrasiab Khattak claimed that the Haqqani network, a militant group the US holds responsible for multiple attacks against coalition forces in Afghanistan, was being protected by the Pakistan military.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">May 19, 2011</span>
-          <a href="https://www.dawn.com/news/630375/cables-reveal-role-of-us-troops-in-pakistan" class="title" target="_blank" rel="noopener">"Cables Reveal Role of US Troops in Pakistan"</a>
-          <p class="excerpt">Confidential American diplomatic cables obtained by Dawn reveal new details about the activities of US forces on the ground in Pakistan, an issue that has gained heightened sensitivity in the aftermath of the Raymond Davis incident in Lahore and the American raid on Osama bin Laden's compound in Abbottabad.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="caravan" class="pub-section">
-      <p class="pub-section-label">The Caravan</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">September 30, 2010</span>
-          <a href="http://www.caravanmagazine.in/essay/truth-about-pakistan" class="title" target="_blank" rel="noopener">"The Truth about Pakistan?"</a>
-          <p class="excerpt"><em>Neither the Western media's shallow coverage nor domestic outrage over it does justice to the complexity of Pakistani society</em></p>
-          <p class="excerpt">"Without Shepherds is a feature documentary that looks beyond the headlines and breaks open the stereotypes of the most dangerous country in the world," declares the movie's press kit. It's almost as if the American filmmakers crafted this description with the specific aim of exasperating a certain kind of Pakistani. The kind who, like myself, follow Western media coverage of the country and have developed an almost knee-jerk negative response to what is known domestically, not without some derision, as reporting on Pakistan's 'softer side.'</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="herald" class="pub-section">
-      <p class="pub-section-label">Herald</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">February 14, 2011</span>
-          <a href="https://www.dawn.com/news/606407/herald-exclusive-shrunken-space" class="title" target="_blank" rel="noopener">"Shrunken Space"</a>
-          <p class="excerpt"><em>On the vanishing space for moderate voices in Pakistan</em></p>
-          <p class="excerpt">If Salman Taseer's assassination underscores anything, it is the Pakistani state's increasing inability to take on extremist violence and its helplessness in protecting those who differ from a narrow interpretation of religion that seems to be becoming mainstream.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">October 31, 2009</span>
-          <a href="controlled-coupling.html" class="title">"Controlled Coupling"</a>
-          <p class="excerpt">In the more recent American romcoms, contemporary mating joins Pakistani drawing rooms and California bars in a hermetically sealed bubble of status, wealth and stability.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="indiatoday" class="pub-section">
-      <p class="pub-section-label">India Today</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">August 25, 2011</span>
-          <a href="http://indiatoday.intoday.in/story/karachi-violence-is-normal/1/149248.html" class="title" target="_blank" rel="noopener">"Innocence Lost"</a>
-          <p class="excerpt"><em>Once a safe and cosmopolitan city, Karachi is now a place where violence is the new normal</em></p>
-          <p class="excerpt">One of the most maddening features of life in today's Karachi is the mythology of its not-so-distant golden past. Those of us not old enough to have worn hipster saris to nightclubs here in the 60s and 70s are frequently subjected to misty-eyed reminiscing about a city that was once apparently safe, cosmopolitan and liberal.</p>
-          <br>
-          <p class="excerpt">For those of us who are younger, the only past we remember plays a very different role.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">October 19, 2012</span>
-          <a href="https://www.indiatoday.in/magazine/neighbours/story/20121029-malala-yousafzai-lashkar-e-toiba-islamic-violence-islamic-revolution-pakistan-760256-2012-10-19" class="title" target="_blank" rel="noopener">"The Girl Who Shook Pakistan"</a>
-          <p class="excerpt">Even as the attack on Malala Yousafzai and the sustained public grieving in its aftermath seemed like they could generate a clear shift in public opinion, Pakistan's religious right was desperately trying to turn the narrative around.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="common" class="pub-section">
-      <p class="pub-section-label">The Common</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">December 27, 2017</span>
-          <a href="https://www.thecommononline.org/ask-a-local-madiha-sattar-dubai/" class="title" target="_blank" rel="noopener">"Ask a Local: Madiha Sattar, Dubai"</a>
-          <p class="excerpt"><em>Appeared in The Common</em></p>
-          <p class="excerpt">And far more interesting is this fact: Dubai has 2.7m residents, of whom 91% are not citizens of the UAE and, unless immigration rules are changed, never will be. The essence, the strange uniqueness, of life in Dubai is the sense of living in a place where most residents are not bound together by citizenship, or the possibility of it.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div id="huffpost" class="pub-section">
-      <p class="pub-section-label">HuffPost</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="pub">June 19, 2009</span>
-          <a href="https://www.huffingtonpost.com/2009/05/20/pakistani-humnitarian-cri_n_205918.html" class="title" target="_blank" rel="noopener">"Pakistani Humanitarian Crisis Largely Unaddressed by US Aid"</a>
-          <p class="excerpt">Pakistanis are in for a rude shock. $900 million, almost half of the $1.9 billion aid package that the US House of Representatives recently approved, has been earmarked for "a new secure embassy and consulates". The remaining billion is separated into $400M in counterinsurgency aid and only $600M for development, less than half of what Senators Kerry and Lugar have been promising with their much-touted figure of $1.5B in non-military aid each year.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">May 23, 2009</span>
-          <a href="https://www.huffingtonpost.com/2009/04/23/pakistans-media-critical_n_190178.html" class="title" target="_blank" rel="noopener">"Pakistan's Media Crucial in Fight Against Extremists"</a>
-          <p class="excerpt">"So, it's not okay for women to be touched by male doctors, but male executioners can hold hands and slap bottoms in front of milling crowds?" asked a Lahore-based lawyer in an April 6 op-ed in Pakistan's English-language daily The News.</p>
-          <br>
-          <p class="excerpt">"Apparently only girls must be punished for their libido. Boys, after all, become men when they can 'tap that'."</p>
-          <br>
-          <p class="excerpt">He was referring to the video that surfaced recently of a woman being flogged by the Taliban in Swat, allegedly for contact with a man she wasn't married to. The frank, almost shocking nature of this piece showcases how Pakistan's media offers a more open platform for debate than many Americans might have realized, one that is vital for building public support against Taliban ideology.</p>
-        </li>
-        <li class="work-item">
-          <span class="pub">July 7, 2009</span>
-          <a href="https://www.huffingtonpost.com/entry/more-clarity-needed-about_b_226489.html" class="title" target="_blank" rel="noopener">"More Clarity Needed About Pakistan's Swat Operation"</a>
-          <p class="excerpt">It seems logical that an army needs to be positioned for attack in case a key peace agreement falls through, and it is clear that the Taliban were continuing to disrupt the lives of Swatis before Gilani declared that the country was at war.</p>
-          <br>
-          <p class="excerpt">But in the context of three failed operations conducted in Swat since November 2007 that had left locals skeptical about the army's willingness to eliminate the Taliban threat, these discrepancies of just a few days become more significant than perhaps they should be in terms of shaping public perception. More and clearer information would go a long way towards winning over a still-skeptical public burned by three failed Swat operations in the past.</p>
-        </li>
-      </ul>
-    </div>
-
+  <section class="pub-section" id="economist">
+    <h2 class="pub-head"><img src="logo-economist.png" alt="The Economist" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">May 25, 2012</p>
+        <a href="http://www.economist.com/node/21555930" class="entry-title" target="_blank" rel="noopener">"City at War"</a>
+        <p class="entry-standfirst">In the commercial capital, politicians and gangsters are bound together</p>
+        <p class="entry-excerpt">Civilians armed with rocket-propelled grenades and AK-47s firing at police in armoured personnel carriers are not images associated with the urban hearts of commercial capitals. But Karachi is no ordinary city. Earlier this month its crime-infested quarter of Lyari, a sprawling network of alleyways housing 1m people, saw battles that pitted police against a powerful local gang. In one scene locals flattened a carrier's tyres with gunfire. Then they kept firing at the stationary vehicle, killing an officer inside.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">May 20, 2012</p>
+        <a href="http://www.economist.com/node/21555740" class="entry-title" target="_blank" rel="noopener">"Power Politics"</a>
+        <p class="entry-standfirst">Pakistan's energy crisis</p>
+        <p class="entry-excerpt">Summer in the plains of Pakistan is excruciating enough without the added joy of 20 hours of power cuts a day. Earlier this month protesters in several towns in Punjab, Pakistan's wealthiest province, smashed windscreens, blocked motorways, shut down markets and set fire to the offices of parliamentarians and an electric utility. They clashed with police who brought out handcuffs and tear gas and fired live rounds in the air.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="fp">
+    <h2 class="pub-head"><img src="logo-fp.png" alt="Foreign Policy" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">May 1, 2011</p>
+        <a href="http://foreignpolicy.com/2011/05/02/the-bin-laden-aftermath-osama-was-the-least-of-pakistans-problems/" class="entry-title" target="_blank" rel="noopener">"The bin Laden Aftermath: Osama Was the Least of Pakistan's Problems"</a>
+        <p class="entry-excerpt">The streets of Karachi are deserted tonight. Earlier today, five people were killed and over 20 vehicles and a bank were torched. Businesses were shut down and the city's streets were choked with panicked traffic as residents rushed home from work.</p>
+        <p class="entry-excerpt">This chaos had nothing to do with Osama bin Laden. It had to do with Karachi's on-going ethnic and political violence, which flares up repeatedly and claimed hundreds of lives last year. It is a reminder that, despite the symbolic victory of bin Laden's defeat, Pakistan faces severe problems beyond militancy that will not go away with his death.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">March 1, 2011</p>
+        <a href="http://foreignpolicy.com/2011/03/02/pakistans-blasphemy-laws-a-history-of-violence/" class="entry-title" target="_blank" rel="noopener">"Pakistan's Blasphemy Laws: A History of Violence"</a>
+        <p class="entry-excerpt">In 1995, Justice Arif Iqbal Bhatti, along with other judges of a Lahore High Court bench, struck down allegations of blasphemy against two Christians. In 1997 the judge was shot dead in his office. The next year a man owned up to the crime, but has apparently disappeared from custody since then.</p>
+        <p class="entry-excerpt">Since the creation of Pakistan's blasphemy laws, at least 38 cases of extrajudicial killings (some of which involved the active involvement or wilful neglect of the police) of people alleged to have directly committed blasphemy have been documented. Arif Bhatti's was a relatively unusual case at the time. More recently, though, two uniquely courageous Pakistanis lost their lives for defending victims of Pakistan's blasphemy laws.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">February 15, 2011</p>
+        <a href="https://foreignpolicy.com/2011/02/15/baluchistan-pakistans-other-war/" class="entry-title" target="_blank" rel="noopener">"Baluchistan: Pakistan's Other War"</a>
+        <p class="entry-excerpt">In a gas-rich province crisscrossed by pipelines, explosive attacks on infrastructure, a means of weakening the Pakistani state, have been a part of the Baluch separatist toolkit for many years. They are one of the standard modes of attack in a conflict that has its roots in a desire to separate that is as old as Pakistan itself.</p>
+        <p class="entry-excerpt">The legacy of the resisted annexation of Baluchistan and continued unfair treatment of the province is something that has come back to haunt the Pakistani state. Unfortunately, it is the people of the province who are bearing the brunt of the fallout.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">August 8, 2010</p>
+        <a href="http://foreignpolicy.com/2010/08/09/karachis-complex-culture-of-violence/" class="entry-title" target="_blank" rel="noopener">"Karachi's Complex Culture of Violence"</a>
+        <p class="entry-excerpt">At any given point, Karachi's violence can be attributed to Islamist militants, criminals peddling various contraband goods or people fighting land grabbers. Everyone but the political parties who could stop the fighting if they wanted to.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">July 27, 2010</p>
+        <a href="http://foreignpolicy.com/2010/07/28/pakistans-non-reaction-to-wikileaks/" class="entry-title" target="_blank" rel="noopener">"Pakistan's Non-Reaction to Wikileaks"</a>
+        <p class="entry-excerpt">Amidst the Western media's focus on Afghanistan-Pakistan strategy, the war's political implications for Barack Obama and how Afghanistan is carpeted with Taliban IEDs, Pakistan simply has too much at home to worry about. Perceptions of the country in the West take a back seat when severe electricity shortages, spiraling food prices and devastating terrorist attacks confront us every day.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="dawn">
+    <h2 class="pub-head"><img src="logo-dawn.png" alt="Dawn" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">February 17, 2013</p>
+        <a href="https://www.dawn.com/news/786837" class="entry-title" target="_blank" rel="noopener">"Post-2014 Afghanistan: Pakistan's Nightmare?"</a>
+        <p class="entry-excerpt">Through the first week of January, according to military estimates, over 49,200 Pakistanis have been killed or injured by militant violence. Of those, about 3,600 army and Frontier Corps personnel have lost their lives. How high could this death toll go if militant groups aren't reconciled or defeated before Western troops leave Afghanistan?</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">February 14, 2013</p>
+        <a href="https://www.dawn.com/news/786375/end-of-the-afghan-war-possibilities-and-pitfalls-i-pakistan-in-contact-with-afghan-taliban-former-northern-alliance" class="entry-title" target="_blank" rel="noopener">"Pakistan in Contact with Afghan Taliban, Former Northern Alliance"</a>
+        <p class="entry-excerpt">As the United States withdraws from Afghanistan for the second time, Pakistan is looking for a role in Afghan politics once again. This time, though, it's putting its eggs in more than one basket.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">February 26, 2012</p>
+        <a href="https://www.dawn.com/news/698752/the-women-behind-the-oscar" class="entry-title" target="_blank" rel="noopener">"The Women Behind the Oscar"</a>
+        <p class="entry-excerpt">Behind the glamour of Pakistan on the Academy Awards red carpet and the outpouring of excitement on television, Twitter and Facebook lies the bravery of the female subjects of Saving Face, who have to keep a low profile for their own security.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">July 21, 2011</p>
+        <a href="https://www.dawn.com/news/641049/flashback-to-96" class="entry-title" target="_blank" rel="noopener">"Flashback to '96"</a>
+        <p class="entry-excerpt">As America tries to reconnect with the Taliban once again, reading historical diplomatic cables invokes a distinct sense of déjà vu, a feeling that nothing has changed after a decade of war.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">May 21, 2011</p>
+        <a href="https://www.dawn.com/news/630875/anp-leaders-said-military-protected-haqqanis-other-militants" class="entry-title" target="_blank" rel="noopener">"ANP Leaders Said Military Protected Haqqanis, Other Militants"</a>
+        <p class="entry-excerpt">In a meeting with an American diplomat in July 2009, ANP leader Senator Afrasiab Khattak claimed that the Haqqani network, a militant group the US holds responsible for multiple attacks against coalition forces in Afghanistan, was being protected by the Pakistan military.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">May 19, 2011</p>
+        <a href="https://www.dawn.com/news/630375/cables-reveal-role-of-us-troops-in-pakistan" class="entry-title" target="_blank" rel="noopener">"Cables Reveal Role of US Troops in Pakistan"</a>
+        <p class="entry-excerpt">Confidential American diplomatic cables obtained by Dawn reveal new details about the activities of US forces on the ground in Pakistan, an issue that has gained heightened sensitivity in the aftermath of the Raymond Davis incident in Lahore and the American raid on Osama bin Laden's compound in Abbottabad.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="caravan">
+    <h2 class="pub-head"><img src="logo-caravan.png" alt="The Caravan" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">September 30, 2010</p>
+        <a href="http://www.caravanmagazine.in/essay/truth-about-pakistan" class="entry-title" target="_blank" rel="noopener">"The Truth about Pakistan?"</a>
+        <p class="entry-standfirst">Neither the Western media's shallow coverage nor domestic outrage over it does justice to the complexity of Pakistani society</p>
+        <p class="entry-excerpt">"Without Shepherds is a feature documentary that looks beyond the headlines and breaks open the stereotypes of the most dangerous country in the world," declares the movie's press kit. It's almost as if the American filmmakers crafted this description with the specific aim of exasperating a certain kind of Pakistani. The kind who, like myself, follow Western media coverage of the country and have developed an almost knee-jerk negative response to what is known domestically, not without some derision, as reporting on Pakistan's 'softer side.'</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="herald">
+    <h2 class="pub-head"><img src="logo-herald.png" alt="Herald" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">February 14, 2011</p>
+        <a href="https://www.dawn.com/news/606407/herald-exclusive-shrunken-space" class="entry-title" target="_blank" rel="noopener">"Shrunken Space"</a>
+        <p class="entry-standfirst">On the vanishing space for moderate voices in Pakistan</p>
+        <p class="entry-excerpt">If Salman Taseer's assassination underscores anything, it is the Pakistani state's increasing inability to take on extremist violence and its helplessness in protecting those who differ from a narrow interpretation of religion that seems to be becoming mainstream.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">October 31, 2009</p>
+        <a href="controlled-coupling.html" class="entry-title">"Controlled Coupling"</a>
+        <p class="entry-excerpt">In the more recent American romcoms, contemporary mating joins Pakistani drawing rooms and California bars in a hermetically sealed bubble of status, wealth and stability.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="indiatoday">
+    <h2 class="pub-head"><img src="logo-indiatoday.png" alt="India Today" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">August 25, 2011</p>
+        <a href="http://indiatoday.intoday.in/story/karachi-violence-is-normal/1/149248.html" class="entry-title" target="_blank" rel="noopener">"Innocence Lost"</a>
+        <p class="entry-standfirst">Once a safe and cosmopolitan city, Karachi is now a place where violence is the new normal</p>
+        <p class="entry-excerpt">One of the most maddening features of life in today's Karachi is the mythology of its not-so-distant golden past. Those of us not old enough to have worn hipster saris to nightclubs here in the 60s and 70s are frequently subjected to misty-eyed reminiscing about a city that was once apparently safe, cosmopolitan and liberal.</p>
+        <p class="entry-excerpt">For those of us who are younger, the only past we remember plays a very different role.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">October 19, 2012</p>
+        <a href="https://www.indiatoday.in/magazine/neighbours/story/20121029-malala-yousafzai-lashkar-e-toiba-islamic-violence-islamic-revolution-pakistan-760256-2012-10-19" class="entry-title" target="_blank" rel="noopener">"The Girl Who Shook Pakistan"</a>
+        <p class="entry-excerpt">Even as the attack on Malala Yousafzai and the sustained public grieving in its aftermath seemed like they could generate a clear shift in public opinion, Pakistan's religious right was desperately trying to turn the narrative around.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="common">
+    <h2 class="pub-head"><img src="logo-common.png" alt="The Common" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">December 27, 2017</p>
+        <a href="https://www.thecommononline.org/ask-a-local-madiha-sattar-dubai/" class="entry-title" target="_blank" rel="noopener">"Ask a Local: Madiha Sattar, Dubai"</a>
+        <p class="entry-standfirst">Appeared in The Common</p>
+        <p class="entry-excerpt">And far more interesting is this fact: Dubai has 2.7m residents, of whom 91% are not citizens of the UAE and, unless immigration rules are changed, never will be. The essence, the strange uniqueness, of life in Dubai is the sense of living in a place where most residents are not bound together by citizenship, or the possibility of it.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="pub-section" id="huffpost">
+    <h2 class="pub-head"><img src="logo-huffpost.png" alt="HuffPost" /></h2>
+    <ul class="pub-list">
+      <li class="entry">
+        <p class="entry-date">June 19, 2009</p>
+        <a href="https://www.huffingtonpost.com/2009/05/20/pakistani-humnitarian-cri_n_205918.html" class="entry-title" target="_blank" rel="noopener">"Pakistani Humanitarian Crisis Largely Unaddressed by US Aid"</a>
+        <p class="entry-excerpt">Pakistanis are in for a rude shock. $900 million, almost half of the $1.9 billion aid package that the US House of Representatives recently approved, has been earmarked for "a new secure embassy and consulates". The remaining billion is separated into $400M in counterinsurgency aid and only $600M for development, less than half of what Senators Kerry and Lugar have been promising with their much-touted figure of $1.5B in non-military aid each year.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">May 23, 2009</p>
+        <a href="https://www.huffingtonpost.com/2009/04/23/pakistans-media-critical_n_190178.html" class="entry-title" target="_blank" rel="noopener">"Pakistan's Media Crucial in Fight Against Extremists"</a>
+        <p class="entry-excerpt">"So, it's not okay for women to be touched by male doctors, but male executioners can hold hands and slap bottoms in front of milling crowds?" asked a Lahore-based lawyer in an April 6 op-ed in Pakistan's English-language daily The News.</p>
+        <p class="entry-excerpt">"Apparently only girls must be punished for their libido. Boys, after all, become men when they can 'tap that'."</p>
+        <p class="entry-excerpt">He was referring to the video that surfaced recently of a woman being flogged by the Taliban in Swat, allegedly for contact with a man she wasn't married to. The frank, almost shocking nature of this piece showcases how Pakistan's media offers a more open platform for debate than many Americans might have realized, one that is vital for building public support against Taliban ideology.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-date">July 7, 2009</p>
+        <a href="https://www.huffingtonpost.com/entry/more-clarity-needed-about_b_226489.html" class="entry-title" target="_blank" rel="noopener">"More Clarity Needed About Pakistan's Swat Operation"</a>
+        <p class="entry-excerpt">It seems logical that an army needs to be positioned for attack in case a key peace agreement falls through, and it is clear that the Taliban were continuing to disrupt the lives of Swatis before Gilani declared that the country was at war.</p>
+        <p class="entry-excerpt">But in the context of three failed operations conducted in Swat since November 2007 that had left locals skeptical about the army's willingness to eliminate the Taliban threat, these discrepancies of just a few days become more significant than perhaps they should be in terms of shaping public perception. More and clearer information would go a long way towards winning over a still-skeptical public burned by three failed Swat operations in the past.</p>
+      </li>
+    </ul>
   </section>
 </main>
-<script src="site.js?v=20260914b"></script>
+<script src="site.js?v=20260914c"></script>
 <script>
-  document.querySelectorAll('.pub-logo-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.pub-section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.pub-logo-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(this.dataset.pub).classList.add('active');
-      this.classList.add('active');
+  // Every publication shows by default; a logo filters to that publication, and clicking it again shows all
+  (() => {
+    const buttons = document.querySelectorAll('.pub-filter button');
+    const sections = document.querySelectorAll('.pub-section');
+    let current = null;
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        current = current === btn.dataset.pub ? null : btn.dataset.pub;
+        buttons.forEach(b => {
+          const on = b.dataset.pub === current;
+          b.classList.toggle('dimmed', current !== null && !on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        sections.forEach(s => s.classList.toggle('is-hidden', current !== null && s.id !== current));
+      });
     });
-  });
+  })();
 </script>
 </body>
 </html>
