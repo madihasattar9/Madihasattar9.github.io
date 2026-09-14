@@ -3,7 +3,7 @@
 :root {
   --ink: #1a1410;
   --paper: #faf8f4;
-  --warm-mid: #8c7b6b;
+  --warm-mid: #6b5a4c;
   --accent: #7a4f3a;
   --rule: #d8cfc5;
   --nav-h: 68px;
@@ -17,7 +17,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
   min-height: 100vh;
   display: flex;
@@ -82,18 +82,10 @@ main { flex: 1; }
 
 .page-header h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.2;
   color: var(--ink);
-}
-
-.page-header .rule {
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-  margin-top: 20px;
 }
 
 /* ─── HOME ───────────────────────────────────────────── */
@@ -108,7 +100,7 @@ main { flex: 1; }
 
 .home-hero h1 {
   font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.15;
   color: var(--ink);
 }
@@ -121,15 +113,9 @@ main { flex: 1; }
   color: var(--warm-mid);
 }
 
-.home-hero .rule {
-  width: 48px;
-  height: 1px;
-  background: var(--accent);
-}
-
 .home-hero .tagline {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: var(--warm-mid);
   line-height: 1.6;
@@ -173,7 +159,7 @@ main { flex: 1; }
 
 .home-about-text p {
   font-size: 1.15rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.9;
   color: var(--ink);
   margin-bottom: 1.1em;
@@ -193,7 +179,7 @@ main { flex: 1; }
 
 .about-section p {
   font-size: 1.15rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.9;
   color: var(--ink);
   text-wrap: pretty;
@@ -242,7 +228,7 @@ main { flex: 1; }
 
 .work-item .pub {
   font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
@@ -279,9 +265,9 @@ main { flex: 1; }
 .work-item .title.no-link:hover { color: var(--ink); }
 
 .work-item .excerpt {
-  font-size: 1rem;
-  font-weight: 300;
-  color: #6b5d50;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #4d4137;
   line-height: 1.7;
   text-wrap: pretty;
 }
@@ -343,17 +329,9 @@ footer {
   flex-wrap: wrap;
 }
 
-footer .copy {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--warm-mid);
-}
-
 footer a {
   font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--warm-mid);
@@ -364,6 +342,9 @@ footer a:hover { color: var(--ink); }
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 680px) {
+  /* Cormorant runs small on phones; scale every rem size up a step */
+  html { font-size: 17px; }
+
   /* name on its own line, links wrap in a row beneath it */
   nav {
     height: auto;
@@ -391,17 +372,21 @@ footer a:hover { color: var(--ink); }
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 8px 28px;
-  position: static;
+  /* pinned while scrolling, like the inner-page menu */
+  position: sticky;
+  top: 0;
+  z-index: 100;
   border: none;
-  background: none;
-  padding: 0;
+  background: var(--paper);
+  padding: 12px 0;
+  margin-top: -12px;
   height: auto;
 }
 
 .hero-nav a {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: var(--warm-mid);
   text-decoration: none;

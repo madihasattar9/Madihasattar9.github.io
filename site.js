@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const footerHTML = `
   <footer>
-    <span class="copy">© Madiha Sattar</span>
     <a href="mailto:madiha.s@gmail.com">madiha.s@gmail.com</a>
     <a href="https://twitter.com/MadihaSattar" target="_blank" rel="noopener">@MadihaSattar</a>
   </footer>`;
