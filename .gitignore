@@ -1,0 +1,5 @@
+# Private working files that should never be published with the site
+.claude/
+DESIGN-BRIEF.md
+Personal website revamp.zip
+*.zip
